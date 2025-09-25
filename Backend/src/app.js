@@ -7,13 +7,19 @@ const path = require('path');
 
 const authRoutes = require('./routes/auth.routes');
 const chatRoutes = require("./routes/chat.routes");
-
+const dotenv = require("dotenv");
 
 const app = express();
 
+// dotenv.config({
+//     path : "./.env"
+// })
+
+
+console.log(process.env.PINECONE_API_KEY)
 
 app.use(cors({
-    origin: ['http://localhost:5173' , "https://aivector.netlify.app"],
+    origin: 'http://localhost:5173',
     credentials: true
 }))
 app.use(express.json());

@@ -1,7 +1,17 @@
 const { Pinecone } = require('@pinecone-database/pinecone');
+const dotenv = require("dotenv");
+
+dotenv.config({
+    path : "./.env"
+})
+
+
+
+console.log("process.env.PINECONE_API_KEY    " , process.env.PINECONE_API_KEY )
 
 const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
 const cohortChatGptIndex = pc.Index('cohort-chat-gpt-768');
+
 
 
 async function createMemory({ vectors, metadata, messageId }) {
@@ -11,6 +21,7 @@ async function createMemory({ vectors, metadata, messageId }) {
         metadata
     }]);
 }
+
 
 
 async function queryMemory({ queryVector, limit = 5, metadata }) {
