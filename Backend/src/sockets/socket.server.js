@@ -21,7 +21,7 @@ function chunkText(text, size = 800, overlap = 0.15) {
 function initSocketServer(httpServer) {
     const io = new Server(httpServer, {
         cors: {
-            origin: "http://localhost:5173",
+            origin: "https://aichatvector-qfwp.vercel.app",
             allowedHeaders: ["Content-Type", "Authorization"],
             credentials: true,
         },
