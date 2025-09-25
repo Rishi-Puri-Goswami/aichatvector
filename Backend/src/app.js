@@ -19,7 +19,7 @@ const app = express();
 console.log(process.env.PINECONE_API_KEY)
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: '*',
     credentials: true
 }))
 app.use(express.json());
