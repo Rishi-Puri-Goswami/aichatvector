@@ -12,10 +12,8 @@ const chatRoutes = require("./routes/chat.routes");
 const app = express();
 
 
-
-
 app.use(cors({
-    origin: 'https://vectoraichat.netlify.app',
+    origin: 'https://aivectorchat.netlify.app',
     credentials: true
 }))
 app.use(express.json());
