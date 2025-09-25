@@ -57,6 +57,7 @@ const Home = () => {
 
     const tempSocket = io(apikey, { // ← use env variable for socket URL
       withCredentials: true,
+        transports: ["websocket", "polling"],
     });
 
     tempSocket.on("ai-response", (messagePayload) => {
