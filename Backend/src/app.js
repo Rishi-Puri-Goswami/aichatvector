@@ -19,7 +19,7 @@ const app = express();
 console.log(process.env.PINECONE_API_KEY)
 
 app.use(cors({
-    origin: 'https://aichatvector-qfwp.vercel.app',
+    origin: true ,
     credentials: true
 }))
 app.use(express.json());
